@@ -5,6 +5,7 @@ module.exports = {
     mode: "development",
     devtool: 'inline-source-map',
     entry: './src/index.js',
+    historyApiFallback: true,
     output: {
         filename: "index_bundle.js",
         path: path.resolve(__dirname, "dist"),
@@ -37,9 +38,6 @@ module.exports = {
                 ]
             }
         ]
-    },
-    devServer: {
-        historyApiFallback: true
     },
     plugins: [
         new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'public', 'index.html') })
